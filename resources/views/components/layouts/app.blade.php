@@ -34,7 +34,7 @@
                         Illuminate\Support\Facades\Route::currentRouteName() ==
                         $route->getName(),
                 ])>
-                    • <a href="{{ route($route->getName(), $parameters) }}">{{ $route->uri() }}</a>
+                    • <a wire:navigate href="{{ route($route->getName(), $parameters) }}">{{ $route->uri() }}</a>
                 </li>
             @endforeach
         </ul>

@@ -8,7 +8,7 @@
                 X
             </div>
 
-            <a href="{{ route('c1.articles.show', $article) }}" class="hover:text-amber-600 cursor-pointer">
+            <a wire:navigate href="{{ route('c1.articles.show', $article) }}" class="hover:text-amber-600 cursor-pointer">
                 {{ $article->title }}
             </a>
             <p class="mt-5 pl-5">
