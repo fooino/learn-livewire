@@ -20,13 +20,21 @@
                 @if ($route->methods()[0] != 'GET' || !str($route->uri())->startsWith('c'))
                     @continue
                 @endif
+
+                @php
+                    $parameters = [];
+
+                    if (str_contains($route->uri(), '/{')) {
+                        $parameters = [1];
+                    }
+                @endphp
                 <li @class([
                     'hover:text-amber-500',
                     'text-amber-600' =>
                         Illuminate\Support\Facades\Route::currentRouteName() ==
                         $route->getName(),
                 ])>
-                    • <a href="{{ route($route->getName()) }}">{{ $route->uri() }}</a>
+                    • <a href="{{ route($route->getName(), $parameters) }}">{{ $route->uri() }}</a>
                 </li>
             @endforeach
         </ul>
