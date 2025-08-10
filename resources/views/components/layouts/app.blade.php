@@ -11,10 +11,10 @@
     @vite('resources/js/c1/app.js')
 </head>
 
-<body class="container mx-auto py-10 bg-gray-800 text-gray-50">
+<body class="container mx-auto bg-gray-800 text-gray-50 h-screen">
 
     <div class="flex">
-        <ul class="border-1 border-amber-600 rounded p-5 mr-5">
+        <ul class="border-1 border-amber-600 rounded p-5 mr-5 w-[240px] h-screen">
 
             @foreach (Illuminate\Support\Facades\Route::getRoutes() as $route)
                 @if ($route->methods()[0] != 'GET' || !str($route->uri())->startsWith('c'))
@@ -30,7 +30,7 @@
                 </li>
             @endforeach
         </ul>
-        <div>
+        <div class="p-5">
             {{ $slot ?? '' }}
         </div>
     </div>
