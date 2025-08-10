@@ -5,6 +5,8 @@
 
         <button type="button" wire:click='clear()' @disabled(blank($searched))
             class='p-2 text-white rounded-md bg-amber-600 disabled:bg-gray-400 w-[10%]'>Clear</button>
+
+            
         <livewire:c1.article.search-result :articles="$articles" :searched="$searched">
     </div>
 </div>

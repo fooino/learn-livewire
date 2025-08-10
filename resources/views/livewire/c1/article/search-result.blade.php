@@ -2,6 +2,12 @@
     @foreach ($articles as $article)
         <div class="my-5 border-1 rounded-md p-5 w-[100%]">
 
+
+            <div wire:click="dispatch('clear:search-articles-results')"
+                class="absolute top-0 right-0 p-2 text-red-400 hover:text-red-600 cursor-pointer">
+                X
+            </div>
+
             <a href="{{ route('c1.articles.show', $article) }}" class="hover:text-amber-600 cursor-pointer">
                 {{ $article->title }}
             </a>
