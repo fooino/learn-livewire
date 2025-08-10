@@ -30,7 +30,7 @@
                 </li>
             @endforeach
         </ul>
-        <div class="p-5">
+        <div class="p-5 w-full">
             {{ $slot ?? '' }}
         </div>
     </div>

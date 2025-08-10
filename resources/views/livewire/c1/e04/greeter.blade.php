@@ -27,7 +27,7 @@
             <option value="!!">!!</option>
         </select>
 
-        <button type="submit" class="inline-block p-2 bg-amber-700 text-gray-50 rounded">submit</button>
+        <button type="submit" class="inline-block p-2 bg-amber-600 text-gray-50 rounded">submit</button>
 
     </form>
 
@@ -50,7 +50,7 @@
             <option value="!!">!!</option>
         </select>
 
-        <button type="submit" class="inline-block p-2 bg-amber-700 text-gray-50 rounded">submit</button>
+        <button type="submit" class="inline-block p-2 bg-amber-600 text-gray-50 rounded">submit</button>
 
     </form>
 

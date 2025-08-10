@@ -22,6 +22,7 @@ class Greeter extends Component
         $this->greetings = Greeting::get();
         $this->greeting = $this->greetings->first()->name;
         $this->name = 'John';
+        $this->symbol = '!!';
 
         $this->updateMessage('mount');
     }
@@ -40,7 +41,7 @@ class Greeter extends Component
 
     public function updateMessage($from)
     {
-        $this->message = $this->greeting . ', ' . $this->name . ' ' . $this->symbol . ' from ' . $from . ' hook';
+        $this->message = $this->greeting . ', ' . $this->name . ' ' . $this->symbol . ' --> from ' . $from . ' hook';
     }
 
     public function render()
