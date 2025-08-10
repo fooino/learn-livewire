@@ -39,6 +39,11 @@
             @endforeach
         </ul>
         <div class="p-5 w-full">
+
+            @if (Illuminate\Support\Facades\Route::currentRouteName() != 'c1.articles.search')
+            <livewire:c1.article.search>
+            @endif
+
             {{ $slot ?? '' }}
         </div>
     </div>
