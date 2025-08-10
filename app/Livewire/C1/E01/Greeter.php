@@ -4,7 +4,7 @@ namespace App\Livewire\C1\E01;
 
 use Livewire\Component;
 
-class Greeting extends Component
+class Greeter extends Component
 {
 
     public $name = 'John';
@@ -15,6 +15,6 @@ class Greeting extends Component
 
     public function render()
     {
-        return view('livewire.c1.e01.greeting');
+        return view('livewire.c1.e01.greeter');
     }
 }
