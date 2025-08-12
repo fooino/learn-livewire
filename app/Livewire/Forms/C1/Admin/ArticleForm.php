@@ -21,7 +21,7 @@ class ArticleForm extends Form
     public $published = false;
 
 
-    #[Validate('required')]
+    #[Validate('nullable')]
     public $notifications = [];
 
 
