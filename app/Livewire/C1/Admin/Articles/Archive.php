@@ -18,7 +18,7 @@ class Archive extends AdminComponent
         return view(
             view: 'livewire.c1.admin.articles.archive',
             data: [
-                'articles'  => Article::get()
+                'articles'  => Article::latest('id')->get()
             ]
         );
     }

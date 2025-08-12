@@ -21,6 +21,8 @@ Route::prefix('/c1')->name('c1.')->group(function () {
 
     Route::get('/admin/dashboard', App\Livewire\C1\Admin\Dashboard::class)->name('admin.dashboard');
     Route::get('/admin/articles/', App\Livewire\C1\Admin\Articles\Archive::class)->name('admin.articles.archive');
+    Route::get('/admin/articles/create', App\Livewire\C1\Admin\Articles\Create::class)->name('admin.articles.create');
+    Route::get('/admin/articles/{article}/edit', App\Livewire\C1\Admin\Articles\Edit::class)->name('admin.articles.edit');
 
 
     // 
