@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('components.layouts.app');
-});
+})->name('home');
 
 
 Route::prefix('/c1')->name('c1.')->group(function () {
@@ -18,6 +18,9 @@ Route::prefix('/c1')->name('c1.')->group(function () {
     Route::get('/articles', App\Livewire\C1\Article\Archive::class)->name('articles.archive');
     Route::get('/articles/search', App\Livewire\C1\Article\Search::class)->name('articles.search');
     Route::get('/articles/{article}', App\Livewire\C1\Article\Show::class)->name('articles.show');
+
+    Route::get('/admin/dashboard', App\Livewire\C1\Admin\Dashboard::class)->name('admin.dashboard');
+    Route::get('/admin/articles/', App\Livewire\C1\Admin\Articles\Archive::class)->name('admin.articles.archive');
 
 
     // 
