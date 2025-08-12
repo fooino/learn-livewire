@@ -1,8 +1,14 @@
 <div>
 
-    <a wire:navigate href="{{ route('c1.admin.articles.create') }}" class="p-4 rounded bg-amber-600 my-5 inline-block">
-        Create Article
-    </a>
+    <div class="flex justify-between items-center">
+        <a wire:navigate href="{{ route('c1.admin.articles.create') }}"
+            class="p-4 rounded bg-amber-600 my-5 inline-block">
+            Create Article
+        </a>
+
+        <livewire:c1.admin.articles.published-count>
+    </div>
+
     <table class="border-1 w-full">
         <thead>
             <th class="border-1 p-5">
@@ -44,5 +50,10 @@
             @endforeach
         </tbody>
     </table>
+
+    <div class="mt-3">
+        {{ $articles->links(data: ['scrollTo' => false]) }}
+    </div>
+
 
 </div>
