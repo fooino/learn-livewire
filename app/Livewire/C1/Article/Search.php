@@ -4,33 +4,29 @@ namespace App\Livewire\C1\Article;
 
 use App\Models\Article;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 
 class Search extends Component
 {
 
+    #[Url(except: '')]
     public $searched = '';
-    public $articles = [];
 
-    public function updatedSearched($value)
-    {
-        $this->reset('articles');
-
-        $this->validate([
-            'searched'  => 'required|min:3'
-        ]);
-
-        $this->articles = Article::search($value)->get();
-    }
 
     #[On('clear:search-articles-results')]
     public function clear()
     {
-        $this->reset('articles', 'searched');
+        $this->reset('searched');
     }
 
     public function render()
     {
-        return view('livewire.c1.article.search');
+        return view(
+            view: 'livewire.c1.article.search',
+            data: [
+                'articles' => Article::search($this->searched)->get()
+            ]
+        );
     }
 }
