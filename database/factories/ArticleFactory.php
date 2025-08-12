@@ -17,8 +17,10 @@ class ArticleFactory extends Factory
     public function definition(): array
     {
         return [
-            'title'     => fake()->realText(rand(3, 10) * 5),
-            'content'   => fake()->realText(500),
+            'title'                     => fake()->realText(rand(3, 10) * 5),
+            'content'                   => fake()->realText(500),
+            'published'                 => [0, 1][rand(0, 1)],
+            'notifications'              => ['email', 'sms', 'firebase'][rand(0, 2)],
         ];
     }
 }

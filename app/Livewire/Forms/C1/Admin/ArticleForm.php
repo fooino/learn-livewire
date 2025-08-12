@@ -17,6 +17,13 @@ class ArticleForm extends Form
     #[Validate('required|min:3')]
     public $content = '';
 
+    #[Validate('required|boolean')]
+    public $published = false;
+
+
+    #[Validate('required')]
+    public $notifications = [];
+
 
     public function setArticle(Article $article)
     {
@@ -24,6 +31,8 @@ class ArticleForm extends Form
 
         $this->title = $this->article->title;
         $this->content = $this->article->content;
+        $this->published = $this->article->published;
+        $this->notifications = $this->article->notifications;
 
         return $this;
     }
@@ -34,8 +43,10 @@ class ArticleForm extends Form
         $this->validate();
 
         $this->article->update([
-            'title' => $this->title,
-            'content' => $this->content,
+            'title'         => $this->title,
+            'content'       => $this->content,
+            'published'     => $this->published,
+            'notifications'  => $this->notifications,
         ]);
     }
 
@@ -46,8 +57,10 @@ class ArticleForm extends Form
         $this->validate();
 
         Article::create([
-            'title' => $this->title,
-            'content' => $this->content,
+            'title'         => $this->title,
+            'content'       => $this->content,
+            'published'     => $this->published,
+            'notifications'  => $this->notifications,
         ]);
     }
 }

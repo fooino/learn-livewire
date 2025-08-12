@@ -14,6 +14,11 @@ class Article extends Model
     protected static $unguarded = ['id'];
 
 
+    protected $casts = [
+        'published'     => 'boolean',
+        'notifications' => 'array'
+    ];
+
 
     public function scopeSearch(Builder $query, string|null $searched = null)
     {
