@@ -17,7 +17,7 @@
     <select wire:model.change="greeting" class="inline-block bg-gray-50 text-gray-800 p-2 border-1 rounded">
 
         @foreach ($greetings ?? [] as $item)
-            <option value="{{ $item->name }}">{{ $item->name }}</option>
+            <option wire:key="{{ $item->id }}" value="{{ $item->name }}">{{ $item->name }}</option>
         @endforeach
     </select>
 

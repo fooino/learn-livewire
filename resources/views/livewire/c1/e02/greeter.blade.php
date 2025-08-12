@@ -13,7 +13,7 @@
     </button>
     <button class="bg-amber-600 text-white rounded p-3 cursor-pointer block my-5"
         wire:click="changeNameByArgument('Jayden')">
-        changethe name to the ava by wire:click=changeNameByArgument('Jayden') static
+        change the name to the ava by wire:click=changeNameByArgument('Jayden') static
     </button>
 
 
